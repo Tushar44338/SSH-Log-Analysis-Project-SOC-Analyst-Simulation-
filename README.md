@@ -11,19 +11,19 @@ Example:
 
   #find ip from many logs of auth.log file: 
   
-  grep -oP 'from \K[0-9.]+' auth.log
+    grep -oP 'from \K[0-9.]+' auth.log
   
   #print all columns from auth.log : 
   
-  awk '{print}' auth.log, cat auth.log
+    awk '{print}' auth.log, cat auth.log
   
   #for particular columns from entire file, -f option of awk is use as saperator of clomuns ' ' :
   
-  awk -F' ' '{print $4}' auth.log
+    awk -F' ' '{print $4}' auth.log
   
   #for count how many time the specific ip found:
   
-  grep -oP 'from \K[0-9.]+' auth.log | sort | uniq -c | sort -nr
+    grep -oP 'from \K[0-9.]+' auth.log | sort | uniq -c | sort -nr
 
 ## Methodology
   -Collected SSH log data (auth.log)
