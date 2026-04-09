@@ -1,7 +1,7 @@
 # SSH-Log-Analysis-Project-SOC-Analyst-Simulation-
 This project focuses on analyzing SSH authentication logs to identify suspicious activities and potential cyber attacks. The objective is to simulate the role of a SOC (Security Operations Center) analyst by detecting unauthorized access attempts and classifying threats based on behavior.
 
-of data-logs file : auth.log 
+Name of data-logs file : auth.log 
 
 tools and commands used :
 linux Terminal: grep, awk, sort, uniq
@@ -21,14 +21,14 @@ Example:
   grep -oP 'from \K[0-9.]+' auth.log | sort | uniq -c | sort -nr
 
 ## Methodology
-  Collected SSH log data (auth.log)
-  Filtered failed login attempts using grep
-  Extracted IP addresses from logs
-  Counted repeated attempts per IP
-  Analyzed behavior based on:
-  Frequency of attempts
-  Time duration
-  Targeted usernames
+  -Collected SSH log data (auth.log)
+  -Filtered failed login attempts using grep
+  -Extracted IP addresses from logs
+  -Counted repeated attempts per IP
+  -Analyzed behavior based on:
+  -Frequency of attempts
+  -Time duration
+  -Targeted usernames
 
 ## Findings
 🔴 High-Risk IPs Identified:
