@@ -4,20 +4,25 @@ This project focuses on analyzing SSH authentication logs to identify suspicious
 Name of data-logs file : auth.log 
 
 tools and commands used :
+
 linux Terminal: grep, awk, sort, uniq
 
 Example: 
 
   #find ip from many logs of auth.log file: 
+  
   grep -oP 'from \K[0-9.]+' auth.log
   
   #print all columns from auth.log : 
+  
   awk '{print}' auth.log, cat auth.log
   
   #for particular columns from entire file, -f option of awk is use as saperator of clomuns ' ' :
+  
   awk -F' ' '{print $4}' auth.log
   
   #for count how many time the specific ip found:
+  
   grep -oP 'from \K[0-9.]+' auth.log | sort | uniq -c | sort -nr
 
 ## Methodology
@@ -29,7 +34,7 @@ Example:
   
   -Counted repeated attempts per IP
   
-  -Analyzed behavior based on:
+  -Analyzed behavior based on :
   
     -Frequency of attempts
     
@@ -61,14 +66,22 @@ Example:
         Type: Targeted Brute Force Attack
 
 ## Analysis
-  Multiple IPs attempted unauthorized access
-  Some IPs showed low-level activity (background noise)
-  High-frequency and fast attempts indicate automated attacks
-  Targeting of privileged accounts (root/admin) increases risk severity
+  -Multiple IPs attempted unauthorized access
+  
+  -Some IPs showed low-level activity (background noise)
+  
+  -High-frequency and fast attempts indicate automated attacks
+  
+  -Targeting of privileged accounts (root/admin) increases risk severity
 
 ## Recommendations for actual systems
-  Disable root login via SSH
-  Implement SSH key-based authentication
-  Use tools like Fail2Ban to block repeated attempts
-  Apply firewall rules to block malicious IPs
-  Enable logging and monitoring systems
+  
+  -Disable root login via SSH
+  
+  -Implement SSH key-based authentication
+  
+  -Use tools like Fail2Ban to block repeated attempts
+  
+  -Apply firewall rules to block malicious IPs
+  
+  -Enable logging and monitoring systems
