@@ -21,16 +21,16 @@ Example:
   grep -oP 'from \K[0-9.]+' auth.log | sort | uniq -c | sort -nr
 
 ## Methodology
-Collected SSH log data (auth.log)
-Filtered failed login attempts using grep
-Extracted IP addresses from logs
-Counted repeated attempts per IP
-Analyzed behavior based on:
-Frequency of attempts
-Time duration
-Targeted usernames
+  Collected SSH log data (auth.log)
+  Filtered failed login attempts using grep
+  Extracted IP addresses from logs
+  Counted repeated attempts per IP
+  Analyzed behavior based on:
+  Frequency of attempts
+  Time duration
+  Targeted usernames
 
--> Findings
+## Findings
 🔴 High-Risk IPs Identified:
 
         ip : 122.163.61.218
@@ -53,15 +53,15 @@ Targeted usernames
         Focused attack
         Type: Targeted Brute Force Attack
 
--> Analysis
-Multiple IPs attempted unauthorized access
-Some IPs showed low-level activity (background noise)
-High-frequency and fast attempts indicate automated attacks
-Targeting of privileged accounts (root/admin) increases risk severity
+## Analysis
+  Multiple IPs attempted unauthorized access
+  Some IPs showed low-level activity (background noise)
+  High-frequency and fast attempts indicate automated attacks
+  Targeting of privileged accounts (root/admin) increases risk severity
 
--> Recommendations for actual systems
-Disable root login via SSH
-Implement SSH key-based authentication
-Use tools like Fail2Ban to block repeated attempts
-Apply firewall rules to block malicious IPs
-Enable logging and monitoring systems
+## Recommendations for actual systems
+  Disable root login via SSH
+  Implement SSH key-based authentication
+  Use tools like Fail2Ban to block repeated attempts
+  Apply firewall rules to block malicious IPs
+  Enable logging and monitoring systems
