@@ -24,6 +24,9 @@ Example:
   #for count how many time the specific ip found:
   
     grep -oP 'from \K[0-9.]+' auth.log | sort | uniq -c | sort -nr
+  #failed passwords from file:
+
+    grep "Failed password" auth.log
 
 ## Methodology
   -Collected SSH log data (auth.log)
