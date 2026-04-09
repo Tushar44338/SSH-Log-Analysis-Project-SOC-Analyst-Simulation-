@@ -22,13 +22,20 @@ Example:
 
 ## Methodology
   -Collected SSH log data (auth.log)
+  
   -Filtered failed login attempts using grep
+  
   -Extracted IP addresses from logs
+  
   -Counted repeated attempts per IP
+  
   -Analyzed behavior based on:
-  -Frequency of attempts
-  -Time duration
-  -Targeted usernames
+  
+    -Frequency of attempts
+    
+    -Time duration
+    
+    -Targeted usernames
 
 ## Findings
 🔴 High-Risk IPs Identified:
